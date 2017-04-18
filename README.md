@@ -272,125 +272,126 @@
   # this will be talked more in OOP week
   ```
   
-  - method definition
-  ```ruby
-  def a_method_without_argument
-    puts "Combine/package/gather related pieces of code"
-    puts "And put it together under a method"
-    puts "Allows you to give a name to those pieces of code"
-    puts "And Ruby will know to run these codes, when it sees the name of the method"
-    puts "This provides ways to organize related codes, which leads to code organization."
-    puts "You probably want your code to be neat if you have a 1000 lines of code"
-  end
-  
-  # to use/call/execute/run a method, just put the name of the method
-  a_method_without_argument 
-  
-  # a method will always return data, whether its an integer, string, or `nil`
-  def method_with_keyword_return
-    puts "this method returns a string 'hello' whenever it's called"
-    puts "the output can then be used outside of this method for further manipulation"
-    puts "a method can only return one data at a time, though not limited to any data type"
-    puts "thus, one can also creata a method that returns an array"
-    return 'hello'
-  end
-  
-  # In the single line of code below, method_with_keyword_return will be executed first, which will execute the code inside the method
-  # the `return` keyword will tell the program to return a string 'hello' back here
-  # the returned string will then be upcased, and finally `puts` will do it's job.
-  puts method_with_keyword_return.upcase # => outputs Hello
-  
-  
-  # particularly in ruby, the return keyword is optional
-  # when the keyword `return` doesnt exist
-  # the method will return the result of the last statement in the program
-  def method_without_return_keyword
-    puts "the last line in the method will be returned"
-    puts "give it a try!"
-    "hello".upcase # the string will be 'upcased' before it gets returned back
-  end
-  
-  # it's similiar to be writing
-  def method_without_return_keyword
-    puts "the last line in the method will be returned"
-    puts "give it a try!"
-    return ("hello".upcase) # or `return "hello".upcase`, the bracket won't matter much in most of the cases.
-  end
-  
-  result = method_with_keyword_return
-  puts result # => outputs HELLO
-  
-  # common mistake of a beginner (at least what i see)
-  # trying to make the output of a method, one might write it this way
-  def method_with_puts_last_line
-    intense_calculation_result = 5 + 4 - 3 * 2 / 1
-    puts intense_calculation_result
-  end
-  
-  storage = method_with_puts_last_line
-  storage.even? # Error! NoMethodError: undefined method `even?' for nil:NilClass
-  
-  # remember Rule #1: every method returns a data
-  # the method will be seen by Ruby like this
-  def method_with_puts_last_line
-    intense_calculation_result = 5 + 4 - 3 * 2 / 1
-    return (puts intense_calculation_result)
-  end
-  
-  # You must know that, `puts` in ruby, is a method, rather than a keyword (`def`, `end`, `if`, `else`, `return`)
-  # having `puts intense_calculation_result` as the last line
-  # the program will first print the value inside the variable `intense_calculation_result` out to the terminal
-  # then that line itself will be evaluated to `nil`
-  # and since it's the last line of the method, the value `nil` will also become the return value of the method `method_with_puts_last_line`
-  # which eventually get stored to the variable `storage`
-  
-  # a good method design pattern will be leaving the method to only do the calculations/manipulation it needs to do
-  # and printing the result outside of the method
-  def method_fix
-    5 + 4 - 3 * 2 / 1
-  end
-  
-  result = method_fix
-  puts result
-  
-  # this way, the result data gotten from `method_fix` can be stored into a variable, and can be further used for more.
-  # another example
-  
-  def meter_to_foot(number)
-    number * 3.28084
-  end
-  
-  def foot_to_inch(number)
-    number * 12
-  end
-  
-  result = meter_to_foot(20)
-  result = foot_to_inch(result)
-  
-  puts result
-  
-  ###
-  
-  # but of course, if your method is designed to not return anything back, its completely fine for the last line to have `puts`.
-  
-  def main_menu
-    puts "Hello. I'm Seeree! What do you want me to do?"
-    puts "1. Turn on the lights"
-    puts "2. Turn off the lights"
-  end
-  
-  main_menu
-  input = gets.chomp
-  case input
-  when "1"
-    puts "I have turn on the lights"
-  when "2"
-    puts "I have turn off the lights"
-  else
-    puts "I don't understand what are you trying to say"
-  end
+  - Method definition
+    ```ruby
+    def a_method_without_argument
+      puts "Combine/package/gather related pieces of code"
+      puts "And put it together under a method"
+      puts "Allows you to give a name to those pieces of code"
+      puts "And Ruby will know to run these codes, when it sees the name of the method"
+      puts "This provides ways to organize related codes, which leads to code organization."
+      puts "You probably want your code to be neat if you have a 1000 lines of code"
+    end
+
+    # to use/call/execute/run a method, just put the name of the method
+    a_method_without_argument 
+    ```
+  - A method will always return data, whether its an integer, string, or `nil`
+    ```ruby
+      def method_with_keyword_return
+        puts "this method returns a string 'hello' whenever it's called"
+        puts "the output can then be used outside of this method for further manipulation"
+        puts "a method can only return one data at a time, though not limited to any data type"
+        puts "thus, one can also creata a method that returns an array"
+        return 'hello'
+      end
+    # In the single line of code below, method_with_keyword_return will be executed first, which will execute the code inside the method
+    # the `return` keyword will tell the program to return a string 'hello' back here
+    # the returned string will then be upcased, and finally `puts` will do it's job.
+    puts method_with_keyword_return.upcase # => outputs Hello
+    ```
+  - Particularly in Ruby, the `return` keyword is optional
+    - If the keyword `return` doesn't exist in the method
+    - Ruby will decide to return the result of the last statement in the method
+    ```ruby
+    def method_without_return_keyword
+      puts "the last line in the method will be returned"
+      puts "give it a try!"
+      "hello".upcase # the string will be 'upcased' before it gets returned back
+    end
     
-  # if you could not understand above in 2 minutes (or give yourself a time frame), please move on. Sometimes people learn and remember only when mistakes are made, and in the programming world, mistakes/errors are always made, and it's perfectly fine and safe to make (at least for now, since this is a development environment. Programmers will very often need a safe environment, often called the development environment to be able to code without having to worry of making code mistakes. Just like how there are test drive fields for car manufacturers and labs for scientists). (not if you repeat those mistakes, again and again, just like anything in life. I guess?)
+    # Ruby will translate the method internally to something like this
+    def method_without_return_keyword
+      puts "the last line in the method will be returned"
+      puts "give it a try!"
+      return ("hello".upcase) # or `return "hello".upcase`, the bracket won't matter much in most of the cases.
+    end
+  
+    result = method_with_keyword_return
+    puts result # => outputs HELLO
+    ```
+  - Common mistake of a Ruby beginner
+    ```ruby
+    # trying to make the output of a method, one might write it this way
+    def method_with_puts_last_line
+      intense_calculation_result = 5 + 4 - 3 * 2 / 1
+      puts intense_calculation_result
+    end
+
+    storage = method_with_puts_last_line
+    storage.even? # Error! NoMethodError: undefined method `even?' for nil:NilClass
+    ```
+    - remember Rule #1: every method returns a data
+      ```
+      # the method will be translated by Ruby into something like this
+      def method_with_puts_last_line
+        intense_calculation_result = 5 + 4 - 3 * 2 / 1
+        return (puts intense_calculation_result)
+      end
+      ```
+    > You must know that, `puts` in ruby, is a method, rather than a keyword (`def`, `end`, `if`, `else`, `return`).
+    > Having `puts intense_calculation_result` as the last line,
+    > the program will first print the value inside the variable `intense_calculation_result` out to the terminal
+    > then that line itself will be evaluated to `nil`
+    > and since it's the last line of the method, the value `nil` will also become the return value of the method `method_with_puts_last_line`
+    > which eventually get stored to the variable `storage`
+  
+    - A good method design pattern will be leaving the method to only do the calculations/manipulation it needs to do, and printing the result outside of the method
+    ```ruby
+    def method_fix
+      5 + 4 - 3 * 2 / 1
+    end
+  
+    result = method_fix
+    puts result
+    ```
+    > this way, the result data gotten from `method_fix` can be stored into a variable, and can be further used for more.
+    - Another example
+    ```ruby 
+    def meter_to_foot(number)
+      number * 3.28084
+    end
+
+    def foot_to_inch(number)
+      number * 12
+    end
+
+    result = meter_to_foot(20)
+    result = foot_to_inch(result)
+    
+    puts result
+    ```
+   - But of course, if your method is designed to not return anything back, its completely fine for the last line to have `puts`.
+    ```ruby
+    def main_menu
+      puts "Hello. I'm Seeree! What do you want me to do?"
+      puts "1. Turn on the lights"
+      puts "2. Turn off the lights"
+    end
+
+    main_menu
+    input = gets.chomp
+    case input
+    when "1"
+      puts "I have turn on the lights"
+    when "2"
+      puts "I have turn off the lights"
+    else
+      puts "I don't understand what are you trying to say"
+    end
+    ```
+    
+  > if you could not understand above in 2 minutes (or give yourself a time frame), please move on. Sometimes people learn and remember only when mistakes are made, and in the programming world, mistakes/errors are always made, and it's perfectly fine and safe to make (at least for now, since this is a development environment. Programmers will very often need a safe environment, often called the development environment to be able to code without having to worry of making code mistakes. Just like how there are test drive fields for car manufacturers and labs for scientists). (not if you repeat those mistakes, again and again, just like anything in life. I guess?)
     
   # let's go on shall we?
   
