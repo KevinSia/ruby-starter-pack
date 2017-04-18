@@ -69,7 +69,9 @@ How nice would it be if we could just 'install' a program in our brain and we ca
   - stands for _Interactive Ruby_
   - it is a program that ships along with the ruby program (meaning it comes together when you install the `ruby` program into your computer)
   - it opens up an interactive session in the terminal, allow users to execute a ruby command like executing commands in the terminal (a line of code can be executed right away by pressing enter after typing, while a script allows user to put many lines of code, and runs it in one shot)
-  - it's mostly used as a playground to test/play with codes in an interactive manner. Script(s) are still needed for automation.
+  - it's mostly used as a playground to test/play with codes in an interactive manner. Script(s) is/are still needed for automation.
+
+Programmers are essentially people who is able to write code to command the computer, with the goal of achieving a certain level of automation on daily task. What you're doing now is to learn the language, just like learning English or any other verbal language, requires a lot of practice. If everything goes well, you should be able to write code to help you on certain tasks :) .
 
 ## Going into Ruby
 ### Input and Output
