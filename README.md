@@ -391,11 +391,16 @@
     end
     ```
     
-  > if you could not understand above in 2 minutes (or give yourself a time frame), please move on. Sometimes people learn and remember only when mistakes are made, and in the programming world, mistakes/errors are always made, and it's perfectly fine and safe to make (at least for now, since this is a development environment. Programmers will very often need a safe environment, often called the development environment to be able to code without having to worry of making code mistakes. Just like how there are test drive fields for car manufacturers and labs for scientists). (not if you repeat those mistakes, again and again, just like anything in life. I guess?)
-    
-  # let's go on shall we?
+  > If you could not understand above in 2 minutes (or give yourself a time frame), please move on. 
+  > Sometimes people learn and remember only when mistakes are made, and in the programming world, mistakes/errors are always made, and it's perfectly fine and safe to make (at least for now, since this is a development environment. 
+  > Programmers will very often need a safe environment, often called the development environment to be able to code without having to worry of making code mistakes. Just like how there are test drive fields for car manufacturers and labs for scientists). 
   
-  # a method cant be very useful if we can package code, but not flexible enough for a small part of it to be changed given some input, right?
+  (not if you repeat those mistakes, again and again, just like anything in life. I guess?)
+    
+  ### let's go on shall we?
+
+  A method cant be very useful if we can package code, but not flexible enough for a small part of it to be changed given some input, right?
+  ```ruby
   def a_method_with_argument(argument1)
     puts "argument1 here acts like a placeholder"
     puts "the program can call this method along with an argument as below"
@@ -405,29 +410,33 @@
   end
   
   a_method_with_argument("hello")
+  ```
   
-  # a method can get any number of arguments stated in the definition, doesn't matter if they are used inside the method or not
+  A method can also accept any number of arguments stated in the definition, doesn't matter if they are used inside the method or not
+  ```ruby
   def method_with_5_arguments(a1, a2, a3, a4, a5)
-    a1 + a2 + a3 + a4 + a5
+    a1 + a2
   end
   
   # ArgumentError!
   method_with_5_arguments(1,2,3,4) 
+  ```
+  > A method call must supply the number of arguments stated in the method definition, which is 5 in this case (a1, a2, a3, a4, a5). Any number of arguments that is not 5 will cause Ruby to raise an ArgumentError.
+  ```ruby
+  method_with_5_arguments(1,2,3,4,5) # => 3
+  ```
   
-  # A method call must supply the number of arguments stated in the method definition, which is 5 in this case (a1, a2, a3, a4, a5). Any number of arguments that is not 5 will cause Ruby to raise an ArgumentError.
-  
-  # Though, an argument can have a default
+  Though, an argument can have a default
+  ```ruby
   def excited(word, number = 1)
     word + "!" * number
   end
   
   excited("coding") # => "coding!" (one argument, second argument default to 1)
   excited("coding", 15) # => "coding!!!!!!!!!!!!!!" (two argument, second argument becomes 10, default is not used)
-  
-  # By the way, if you counted the number of exclaimation marks above, you will notice there are only 14 "!". That proves you're sharp! Being sharp as a programmer can certainly help you a lot on improving yourself! Well if you don't, mmmmmmmmaybe it's time to train your attention to details.
-  
-  
   ```
+  > By the way, if you counted the number of exclaimation marks above, you will notice there are only 14 "!". That proves you're sharp! Being sharp as a programmer can certainly help you a lot on improving yourself! Well if you don't, mmmmmmmmaybe it's time to train your attention to details.
+
 
 
 - String
