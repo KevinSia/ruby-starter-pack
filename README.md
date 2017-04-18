@@ -1,11 +1,14 @@
 # ~SAPPHIRE~ ~EMERALD~ ~DIAMOND~ ~PEARL~ 
 # RUBY!
-- Fun fact
+ A little history about programming.
   - https://en.wikipedia.org/wiki/History_of_programming_languages
-- Script
-  - A script is a text file containing commands/codes/instructions that you write and pass to the a program to run.
+
+## Let's start by expanding your programming vocablulary
+
+### **Script**
+  - A script is a plain text file containing commands/codes/instructions that you write and pass to the a program to run.
   
-- Terminal
+### **Terminal**
   - Also known as `shell`
   - The shell is a program that takes keyboard commands and passes them to the operating system to carry out. 
   - We have been using what we called GUI (Graphical User Interface)
@@ -13,57 +16,62 @@
     - It also takes up a lot of computer resources (memory).
     - We are now learning to make websites, which essentially means we need to know how to make programs for computer to serve web pages automatically, without having a human.
     
-- Ruby
+### **Ruby**
   - It's a programming language.
-  - We write codes to 'tell' the computer to do what we want
-  - A human can understand a few languages
+  - We write codes to 'tell' the computer to do what we want. `Ruby` is one of the many languages we can use to 'communicate' with the computer
+  - A human can understand a few languages:
     - I understands Chinese, English, Malay, Cantonese. You can communicate with me with those languages.
   - Whereas a computer can 'understand' many different languages (limits by how many languages are available out there, and how many language programs can you install in your computer). One will just need to install the respective program for a computer to 'understand' that language.
-  Example:
-  The file below
-    ```ruby
-    # test.rb
-    5.times { puts "hello world" }
-    ```
-  contains commands in Ruby language to print `hello world` 5 times in the terminal. 
-  For the computer to 'understand' the commands in this file, one would need to install the `Ruby` program in the computer. (the `Ruby` program can be seen as a kind of translator to the computer)
-  Then to execute this file, one would just need to type `ruby test.rb` in the terminal/shell, followed by the Enter key to send this command to the operating system.
   
-  a Python file that contains similiar commands (print `hello world` 5 times in the terminal) may look like this
-  ```python
-  for i in range(5):
-    print "hello world"
-  ```
-  
-  a C file example:
-  ```C
-  #include <stdio.h>
-  
-  int main (void) {
-    for(i = 0; i < 5; i++){
-      printf("hello world");
-    }
-    
-    return 0;
-  }
-  
-  The `syntax` (grammar equivalent of human language) may be different, but it's doing the same thing.
-  
-  Choice of language can depend on many factors. Ruby is our choice because:
-  - it reads more like English, which is easier for beginners to start.
-  - it's a high level general purpose language (low level languages like `C` or `Assembly` languages are harder to write and requires good computer knowledge to work with.)
-  - it's the language behind Rails, a framework written in Ruby to build web applications.
-  
-  How nice would it be if we could just 'install' a program in our brain and we can understand a language right away. (or is it not?)
+Example:
 
-- IRB
-  - stands for Interactive Ruby
+Assume a file in your computer that looks like below:
+```ruby
+# test.rb
+5.times { puts "hello world" }
+```
+The file `test.rb` contains commands in Ruby language to print `hello world` 5 times in the terminal. The `.rb` extension behind is to indicate that it's a `Ruby` file. Not a `Python` file. Not a `Cobra` file.
+
+For the computer to 'understand' the commands in this file, one would need to install the `Ruby` program in the    computer. (the `Ruby` program can be seen as a kind of translator to the computer)
+
+Then to execute this file, one would just need to type `ruby test.rb` in the terminal/shell, followed by the Enter key to send this command to the operating system.
+  
+A Python file that contains similiar commands (print `hello world` 5 times in the terminal) may look like this
+```python
+for i in range(5):
+  print "hello world"
+```
+  
+A C file example:
+```C
+#include <stdio.h>
+
+int main (void) {
+  for(i = 0; i < 5; i++){
+    printf("hello world");
+  }
+
+  return 0;
+}
+```
+  
+The `syntax` (grammar equivalent of human language) may be different, but it's doing the same thing.
+
+Choice of language can depend on many factors. Ruby is our choice because:
+- it reads more like English, which is easier for beginners to start.
+- it's a high level general purpose language (low level languages like `C` or `Assembly` languages are harder to write and requires good computer knowledge to work with.)
+- it's the language behind Rails, a framework written in Ruby to build web applications.
+
+How nice would it be if we could just 'install' a program in our brain and we can understand a language right away. (or is it not?)
+
+### **IRB**
+  - stands for _Interactive Ruby_
   - it is a program that ships along with the ruby program (meaning it comes together when you install the `ruby` program into your computer)
   - it opens up an interactive session in the terminal, allow users to execute a ruby command like executing commands in the terminal (a line of code can be executed right away by pressing enter after typing, while a script allows user to put many lines of code, and runs it in one shot)
   - it's mostly used as a playground to test/play with codes in an interactive manner. Script(s) are still needed for automation.
 
-
-## Input and Output
+## Going into Ruby
+### Input and Output
   - Getting user input 
     - `gets.chomp` (ever wonder what happens if you don't put `chomp`)?
   - Printing into console/terminal
@@ -71,97 +79,108 @@
     - `print`
     - `p`
     
-## ## Basic Data Types
-  ## Basic Data Types
-  - Integer
-    - used for calculation (`+`, `-`, `*`, `/`, `%`)
-    ```ruby
-    	  1 + 2 # => 2
-        2 - 3 # => -1
-        3 * 4 # => 12
-        4 / 2 # => 1
-        13 / 5 # => 2 (the first digit is returned instead)
-        5 % 2 # => 1 (remainder)
-    ```
-    - built-in methods
-    ```ruby
-    1.even? # => true (a boolean)
-    2.odd? # => false (a boolean)
-    15.round(2) # => 20
-    ```
-  - String
-    - used to represent a *string* of characters, starts and ends with double quotes(`"`) or single quotes (`'`)
-    ```ruby
-    "hello world"
-    "foo bar baz is commonly used by programmers for placeholder texts"
-    "you c@n h@v3 any k&nd of charact#rs (inside) a $tring! Even s'ngle quotes!"
-    "if you want to have double quotes inside a string, use \ (backslash)"
-    "like \"such\""
-    ```
-    - built-in methods
-    ```ruby
-    "shout your lungs out".upcase
-    "CALM YOURSELF DOWN".downcase
-    "first character should be capitalized".capitalize
-    "This sentence contains fourty-five characters".length
-    "melborp a regnol on si esrever ni gnidaeR".reverse
-    "Subsituting the first word in word".sub("first", "second")
-    "when what where".gsub('w', 't')
-    ``` 
-  - Boolean
-  	- used to evaluate truthfulness in programming
-  	```ruby
-    # == compares two things and gives `true` if they are exactly the same
-    1 == 1 # true
-    "what liars say" == "what liars do" # false
-   	true == true # true
-    true == false # false
-    false == false # true
-    
-    string1 = "hello"
-    string2 = "Hello"
-    
-    string1 == string2 # false
-    
-    # != compares two things and gives `true` if they are different
-    1 != 2 # true
-    1 != 1 # false
-    
-    true != true # false
-    true != false # true
-    false != false # false
-    
-    # `<`,`>`, `<=`, `>=` can be used to compare two data's relational position
-    
-    1 > 2 # true
-    10 < 20 # false
-    1 >= 1 # true
-    10 <= 10 # true
-    'n' > 'b' # true
-    'z' < 'a' # false
-    'A' < 'z' # true (in computer, capital letters comes before lower case letters, refer to ASCII codes to know more)
-    
-    # `&&` (AND operator)
-    # takes two statements on left and right
-    # evaluates to true ONLY if the two statements evaluate to true
-    # else gives false
-    
-    a = 5
-    a > 0 && a < 10 # (true && true) => true
-    a > 0 && a < 5 # (true && false) => false
-    a > 6 && a > 1 # (false && true) => false
-    a > 10 && a > 20 # (false && false) => false
-    
-    # boolean values are used for if-else statements and for loops
-    ```
-  - Boolean
-  - Array
-  - Hashes
-  
-  - Floats
-  - Symbols
-  - Nil
-## Assigning a value into a variable 
+### Basic Data Types [Not complete]
+- Integer
+  - used for calculation (`+`, `-`, `*`, `/`, `%`)
+  ```ruby
+      1 + 2 # => 2
+      2 - 3 # => -1
+      3 * 4 # => 12
+      4 / 2 # => 1
+      13 / 5 # => 2 (the first digit is returned instead)
+      5 % 2 # => 1 (remainder)
+  ```
+  - built-in methods
+  ```ruby
+  1.even? # => true (a boolean)
+  2.odd? # => false (a boolean)
+  15.round(2) # => 20
+  ```
+- String
+  - used to represent a *string* of characters, starts and ends with double quotes(`"`) or single quotes (`'`)
+  ```ruby
+  "hello world"
+  "foo bar baz is commonly used by programmers for placeholder texts"
+  "you c@n h@v3 any k&nd of charact#rs (inside) a $tring! Even s'ngle quotes!"
+  "if you want to have double quotes inside a string, use \ (backslash)"
+  "like \"such\""
+  ```
+  - built-in methods
+  ```ruby
+  "shout your lungs out".upcase
+  "CALM YOURSELF DOWN".downcase
+  "first character should be capitalized".capitalize
+  "This sentence contains fourty-five characters".length
+  "melborp a regnol on si esrever ni gnidaeR".reverse
+  "Subsituting the first word in word".sub("first", "second")
+  "when what where".gsub('w', 't')
+  ``` 
+- Boolean
+  - used to evaluate truthfulness in programming
+  ```ruby
+  # == compares two things and gives `true` if they are exactly the same
+  1 == 1 # true
+  "what liars say" == "what liars do" # false
+  true == true # true
+  true == false # false
+  false == false # true
+
+  string1 = "hello"
+  string2 = "Hello"
+
+  string1 == string2 # false
+
+  # != compares two things and gives `true` if they are different
+  1 != 2 # true
+  1 != 1 # false
+
+  true != true # false
+  true != false # true
+  false != false # false
+
+  # `<`,`>`, `<=`, `>=` can be used to compare two data's relational position
+
+  1 > 2 # true
+  10 < 20 # false
+  1 >= 1 # true
+  10 <= 10 # true
+  'n' > 'b' # true
+  'z' < 'a' # false
+  'A' < 'z' # true (in computer, capital letters comes before lower case letters, refer to ASCII codes to know more)
+
+  # `&&` (AND operator)
+  # takes two statements on left and right
+  # evaluates to true ONLY if the two statements evaluate to true
+  # else gives false
+
+  a = 5
+  a > 0 && a < 10 # (true && true) => true
+  a > 0 && a < 5 # (true && false) => false
+  a > 6 && a > 1 # (false && true) => false
+  a > 10 && a > 20 # (false && false) => false
+
+  # boolean values are used for if-else statements and for loops
+  ```
+- Array
+  - access element (`[]`)
+  - change element on a particular index (`[]=`)
+  - taking a sub collection of elements
+  - array methods (`pop`, `push`, `shift`, `unshift`, `insert`) etc.
+  - string, in ruby, behaves similiarly to array when it comes to the method (`[]`/`.slice` and `[]=`)
+- Hashes
+  - key-value store
+
+- Floats
+  - decimal numbers
+- Symbols
+  - not used for normal text
+  - text for internal purpose (not for printing and showing)
+  - object_id
+- Nil
+  - to represent empty/nothing in a program
+  - say if an element is not in an array, `.index` will give `nil` instead, to represent nothing is found.
+
+### Assigning a value into a variable 
   - `my_string = 'foo bar'`
     - the lines reads: assign 'foo bar' (string) into a variable `my_string`
     - a variable is used to give a name/reference to a value. The value can then be referred back by using the variable name.
