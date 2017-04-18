@@ -30,11 +30,11 @@ Assume a file in your computer that looks like below:
 # test.rb
 5.times { puts "hello world" }
 ```
-The file `test.rb` contains commands in Ruby language to print `hello world` 5 times in the terminal. The `.rb` extension behind is to indicate that it's a `Ruby` file. Not a `Python` file. Not a `Cobra` file.
+> The file `test.rb` contains commands in Ruby language to print `hello world` 5 times in the terminal. The `.rb` extension  is to indicate that it's a `Ruby` file. Not a `Python` file. Not a `Cobra` file.
 
-For the computer to 'understand' the commands in this file, one would need to install the `Ruby` program in the    computer. (the `Ruby` program can be seen as a kind of translator to the computer)
+> For the computer to 'understand' the commands in this file, one would need to install the `Ruby` program in the    computer. (the `Ruby` program can be seen as a kind of translator to the computer)
 
-Then to execute this file, one would just need to type `ruby test.rb` in the terminal/shell, followed by the Enter key to send this command to the operating system.
+> Then to execute this file, one would just need to type `ruby test.rb` in the terminal/shell, followed by the Enter key to send this command to the operating system.
   
 A Python file that contains similiar commands (print `hello world` 5 times in the terminal) may look like this
 ```python
@@ -47,6 +47,7 @@ A C file example:
 #include <stdio.h>
 
 int main (void) {
+  int i;
   for(i = 0; i < 5; i++){
     printf("hello world");
   }
