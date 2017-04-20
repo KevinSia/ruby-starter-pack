@@ -185,14 +185,13 @@ Programmers are essentially people who is able to write code to command the comp
 
 ### Assigning a value into a variable 
   - `my_string = 'foo bar'`
-    - the lines reads: assign 'foo bar' (string) into a variable `my_string`
-    - a variable is used to give a name/reference to a value. The value can then be referred back by using the variable name.
-    
+   - the lines reads: assign 'foo bar' (string) into a variable `my_string`
+   - a variable is used to give a name/reference to a value. The value can then be referred back by using the variable name.
       ```ruby
       a_string = "hello world"
       puts a_string # hello world
       ```
-    - a variable may contain different value at different point of code execution
+   - a variable may contain different value at different point of code execution
       
       ```ruby
       a_string = "hello world"
@@ -200,15 +199,15 @@ Programmers are essentially people who is able to write code to command the comp
       a_string = a.string.upcase
       puts a_string # HELLO WORLD
       ```
-    - a variable can (and very often)6be used to store values that comes elsewhere (eg. user input)
+    - a variable can (and very often) be used to store values that comes elsewhere (eg. user input)
       ```ruby
       puts "What is your name?"
       an_input = gets.chomp
       puts an_input.capitalize
       ```
-      - We will never be sure what is the value that contains inside the variable `an_input`, because it depends on user's input. If the user types `"kevin"`, the variable `an_input` will contain `"kevin"`, and the program will continue to 'capitalize' the value inside `an_input`, and finally prints it out to the terminal.
-      - This program will now be able to accept input from users, and process that input accordingly.
-      - Google's code to power the search bar **probably** looks like this. (okay maybe a lot more lines than this. Apparently Google has more than 2 million code to power all of it's applications. Written by a lot of programmers of course.)
+    - We will never be sure what is the value that contains inside the variable `an_input`, because it depends on user's input. If the user types `"kevin"`, the variable `an_input` will contain `"kevin"`, and the program will continue to 'capitalize' the value inside `an_input`, and finally prints it out to the terminal.
+    - This program will now be able to accept input from users, and process that input accordingly.
+    - Google's code to power the search bar **probably** looks like this. (okay maybe a lot more lines than this. Apparently Google has more than 2 million code to power all of it's applications. Written by a lot of programmers of course.)
 
 ## Conditional statements
   - using `if-elsif-else`
@@ -256,9 +255,8 @@ Programmers are essentially people who is able to write code to command the comp
     else
       puts "1% chance"
     end
-    
-    
     ```
+    
   - using `case-when-else`
     ```ruby
     puts "Welcome to my program. Ask me a question"
@@ -278,9 +276,10 @@ Programmers are essentially people who is able to write code to command the comp
     else
       puts "You fool!"
     end
-  ```
-  
-## Using custom methods
+   ```
+
+```
+- Using custom methods
   - Remember Rule #1: a method will always return data, whether its an integer, string, an array, or `nil`
   - one can use the return value of a method in several ways
   ```ruby
@@ -288,12 +287,13 @@ Programmers are essentially people who is able to write code to command the comp
   result = "upcase".upcase
   
   # applying/chaining methods together
-  # the result of `"never change".upcase`, which is `"NEVER CHANGE"`, will be downcased by the followed `.downcase`
-  "never change".upcase.downcase.capitalize.downcase.center(20, '@')
-  # chaining methods together like this is generally not a good design of code, as it can be prone to error, unless a certain guideline is met (Law of Demeter).
-  # this will be talked more in OOP week
-  ```
   
+  "never change".upcase.downcase.capitalize.downcase.center(20, '@')
+  # the result of `"never change".upcase`, which is `"NEVER CHANGE"`, will be downcased by the followed `.downcase`, and so on
+  # chaining methods together like this is generally not a good design of code, as it can be prone to error, unless a certain guideline is met (Law of Demeter).
+  # this will be talked more in Object-Oriented Programming week
+  ```
+
   - Method definition
     ```ruby
     def a_method_without_argument
