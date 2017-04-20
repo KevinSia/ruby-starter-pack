@@ -181,7 +181,7 @@ Programmers are essentially people who is able to write code to command the comp
   - object_id
 - Nil
   - to represent empty/nothing in a program
-  - say if an element is not in an array, `.index` will give `nil` instead, to represent nothing is found.
+  - say if a character `c`, is not in a string, `hello`. `"hello".index("c")` will return `nil`, to represent nothing is found.
 
 ### Assigning a value into a variable 
   - `my_string = 'foo bar'`
