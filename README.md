@@ -473,10 +473,11 @@ Programmers are essentially people who is able to write code to command the comp
     puts "Your age is #{input + 10}!"
     ```
     
+
 ### When to use `.each` and `.map`
 Use `.each` for all operations involving trasversing an array!
 But, when you tend to do things like this
-```
+```ruby
 def some_method_to_process(e)
   # very complicated code
 end
@@ -493,7 +494,7 @@ end
 ```
 
 it could be refactored to
-```
+```ruby
   def process_array(arr)
     arr.map { d|e| some_method_to_process(e) }
   end
@@ -501,7 +502,7 @@ it could be refactored to
 
 Futhermore, different each cases can also be refactored into built-in enumerable methods too
 `.select`
-```
+```ruby
 def condition_check(e)
   # returns true or false
 end
@@ -516,7 +517,7 @@ end
 ```
 
 it can be refactored into
-```
+```ruby
 def process_array(arr)
   arr.select { |e| condition_check(e) }
 end
