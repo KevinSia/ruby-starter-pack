@@ -501,7 +501,8 @@ it could be refactored to
 ```
 
 Futhermore, different each cases can also be refactored into built-in enumerable methods too
-`.select`
+
+Eg. `.select`
 ```ruby
 def condition_check(e)
   # returns true or false
